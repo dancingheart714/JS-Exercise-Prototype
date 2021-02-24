@@ -82,7 +82,7 @@ function Airplane(name) {
     this.model = model;
     this.milesPerGallon = milesPerGallon;
     this.tank = 0;
-    this.odometer =0;
+    this.odometer =0;   
  }  
   Car.prototype.fill = function(gallons){
       return this.tank += gallons;
@@ -90,7 +90,10 @@ function Airplane(name) {
   Car.prototype.drive = function(distance){
       this.odometer += distance;
       this.tank -= distance;
+      if(this.tank ===0){
+      return `$I ran out of fuel at ${this.odometer}miles!`
   }
+}
 
  
   
