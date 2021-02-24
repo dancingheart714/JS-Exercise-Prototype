@@ -79,17 +79,18 @@ function Airplane(name) {
   */
   
  function Car(model, milesPerGallon) {
-    this.tank = 0;
-    this.odometer = 0;
     this.model = model;
-    this.milesPerGallon = milesPerGallon
-  
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer =0;
+ }  
   Car.prototype.fill = function(gallons){
-      return this.model + this.tank + gallons;
-    }
+      return this.tank += gallons;
   }
-
-  
+  Car.prototype.drive = function(distance){
+      this.odometer += distance;
+      this.tank -= distance;
+  }
 
  
   
@@ -112,7 +113,7 @@ function Airplane(name) {
     return `Playing with ${this.favoriteToy}`;
   };
 
- 
+
  
   
   /* 
